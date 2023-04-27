@@ -7,7 +7,7 @@ export default function ActivityCards() {
       {data.map((element) => {
         return (
           <div className="container" key={element.id}>
-            <ul>
+            <ul style={{ listStyleType: "none" }}>
               <li
                 style={{
                   fontWeight: "bold",

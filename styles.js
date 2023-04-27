@@ -14,8 +14,8 @@ export default createGlobalStyle`
   h1 {text-align: center}
   ul {
   list-style: none;
-  padding-left: 10px;
-  padding-right:10px;
+  margin: 0;
+  padding: 0;
 }
 li {
   border-bottom: 1px solid black;

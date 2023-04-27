@@ -24,7 +24,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: blue;
+  color: navy;
 }
   .container {
   display: flex;

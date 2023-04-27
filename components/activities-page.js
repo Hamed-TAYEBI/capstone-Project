@@ -1,5 +1,5 @@
 import { data } from "@/lib/db/db";
-
+import Image from "next/image";
 export default function ActivityCards() {
   const ActivitiesPage = data.map((element) => {
     return (
@@ -17,7 +17,8 @@ export default function ActivityCards() {
 
           <li>Note: {element.note}</li>
           <li>You tagged: {element.tags}</li>
-          <img
+
+          <Image
             src={element.imageURL}
             alt="sample image"
             width="300"

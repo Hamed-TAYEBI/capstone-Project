@@ -1,16 +1,18 @@
 import { use, useState } from "react";
 import Link from "next/link";
 import { StyledLink } from "@/components/StyledLink";
+import { useRouter } from "next/router";
+
 export default function Form({ addActivity }) {
+  const router = useRouter();
   function handleSubmit(event) {
     event.preventDefault();
+
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
-    addActivity(data);
 
-    event.target.note.focus();
-    event.target.reset();
+    addActivity(data);
+    router.push("/");
   }
 
   return (
@@ -51,9 +53,6 @@ export default function Form({ addActivity }) {
         <input id="date" type="date" name="date" />
         <button type="submit" className="form__submit-button">
           Submit
-        </button>
-        <button>
-          <Link href="/">see your activity here</Link>
         </button>
       </form>
     </>

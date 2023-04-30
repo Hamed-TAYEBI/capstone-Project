@@ -11,7 +11,14 @@ export default createGlobalStyle`
     margin: 0;
     font-family: fantasy;
   }
-  h1 {text-align: center}
+  h1 {text-align: center;
+    font-size: 0.5rem
+
+  }
+  h2 {text-align: center;
+    font-size: 0.5rem
+
+  }
   ul {
   list-style: none;
   margin: 0;
@@ -23,8 +30,13 @@ li {
   
 }
 a {
+  
   text-decoration: none;
   color: navy;
+}
+input {
+  display: block;
+  margin: auto;
 }
   .container {
   display: flex;
@@ -44,5 +56,37 @@ a {
   background-color: lightgray;
   box-sizing: border-box;
 }
+/* .container {
+  display: grid;
+  min-width: 100vw;
+  min-height: 100vh;
+  grid-template: "container";
+  place-items: center;
+  place-content: center;
+} */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+  border: 3px solid navy;
+  border-radius:10px;
+  margin: 20px;
+}
+
+.form__submit-button {
+  border: none;
+  padding-inline: 20px;
+  padding-block: 10px;
+  background-color: red;
+  color: yellow;
+  font-size: 0.5rem;
+}
+
+.form__submit-button:hover {
+  background-color: blue;
+}
+
 
 `;

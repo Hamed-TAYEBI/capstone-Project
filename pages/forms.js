@@ -33,7 +33,6 @@ export default function Form({ addActivity }) {
           placeholder="...my title for this activity"
           style={{ width: "300px", height: "75px" }}
         />
-
         <label htmlFor="note">My note: </label>
         <input
           id="note"
@@ -45,10 +44,8 @@ export default function Form({ addActivity }) {
 
         <label htmlFor="url">URL: </label>
         <input id="url" type="url" name="url" placeholder="...add a URL" />
-
         <label htmlFor="imageURL">image URL </label>
         <input id="imageURL" type="url" name="imageURL" placeholder="..url" />
-
         <label htmlFor="date">Date: </label>
         <input id="date" type="date" name="date" />
         <button type="submit" className="form__submit-button">

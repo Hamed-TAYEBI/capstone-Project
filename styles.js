@@ -56,14 +56,7 @@ input {
   background-color: lightgray;
   box-sizing: border-box;
 }
-/* .container {
-  display: grid;
-  min-width: 100vw;
-  min-height: 100vh;
-  grid-template: "container";
-  place-items: center;
-  place-content: center;
-} */
+
 
 .form {
   display: flex;
@@ -87,6 +80,11 @@ input {
 .form__submit-button:hover {
   background-color: blue;
 }
+
+.tag {
+ }
+  
+
 
 
 `;

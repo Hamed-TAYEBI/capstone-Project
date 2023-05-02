@@ -10,9 +10,9 @@ export default function TagComponentThree() {
     <>
       <button class="tag" onClick={handleclick}>
         {tagShape ? (
-          <Image src="/assets/audio.png" width="25" height="25" alt="book" />
+          <Image src="/assets/audios.png" width="25" height="25" alt="book" />
         ) : (
-          <Image src="/assets/audio2.png" width="25" height="25" alt="empty" />
+          <Image src="/assets/audios2.png" width="25" height="25" alt="empty" />
         )}
       </button>
     </>

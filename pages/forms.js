@@ -1,6 +1,3 @@
-import { use, useState } from "react";
-import Link from "next/link";
-import { StyledLink } from "@/components/StyledLink";
 import { useRouter } from "next/router";
 
 export default function Form({ addActivity }) {

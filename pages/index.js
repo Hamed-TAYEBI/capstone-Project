@@ -3,7 +3,7 @@ import ActivityCards from "@/components/ActivityCards";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function HomePage({ activities }) {
+export default function HomePage({ activities, editTag }) {
   return (
     <div>
       <h1>Activities Page</h1>
@@ -19,7 +19,7 @@ export default function HomePage({ activities }) {
         </button>
       </Link>
 
-      <ActivityCards activities={activities}></ActivityCards>
+      <ActivityCards activities={activities} editTag={editTag}></ActivityCards>
     </div>
   );
 }

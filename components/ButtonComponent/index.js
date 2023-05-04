@@ -1,3 +1,3 @@
-export const Button =() => {
-    retrun (<button> </button>)
+export const Button = () => {
+  return <button> </button>;
 };

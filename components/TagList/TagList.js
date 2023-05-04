@@ -1,3 +1,4 @@
+import { v4 as uuid4 } from "uuid";
 import { tagList } from "@/lib/db/db";
 import Tag from "../Tag";
 export default function TagList({ tags, editTag, activityId, tagId }) {
@@ -7,6 +8,7 @@ export default function TagList({ tags, editTag, activityId, tagId }) {
         const foundTag = tags?.find((id) => tag.id === id);
         return (
           <Tag
+            key={uuid4()}
             activityId={activityId}
             tagId={tagId}
             editTag={editTag}

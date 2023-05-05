@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import TagList from "./TagList/TagList";
+import { useRouter } from "next/router";
 
 export default function ActivityCards({ activities, editTag }) {
   return (
@@ -44,6 +45,12 @@ export default function ActivityCards({ activities, editTag }) {
                     your URL
                   </Link>
                 )}
+              </li>
+              <li>
+                {" "}
+                <button>
+                  <Link href={`/activity/${activity.id}`}>Read More</Link>
+                </button>{" "}
               </li>
             </ul>
           </div>

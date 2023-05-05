@@ -7,9 +7,7 @@ export default function App({ Component, pageProps }) {
   function addActivity(newActivity) {
     setActivities([{ ...newActivity, id: crypto.randomUUID() }, ...activities]);
   }
-  function editTag(activityId, tagId) {
-    console.log("I am app", activityId, "my id is", tagId);
-  }
+  function editTag(activityId, tagId) {}
   return (
     <>
       <GlobalStyle />

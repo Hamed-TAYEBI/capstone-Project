@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function ActivityCards({ activities }) {
+import TagList from "./TagList/TagList";
+
+export default function ActivityCards({ activities, editTag }) {
   return (
     <>
-      {activities.map((element) => {
+      {activities.map((activity) => {
         return (
-          <div className="container" key={element.id}>
+          <div className="container" key={activity.id}>
             <ul style={{ listStyleType: "none" }}>
               <li
                 style={{
@@ -14,24 +16,31 @@ export default function ActivityCards({ activities }) {
                 }}
               >
                 Title:
-                {element.title}
+                {activity.title}
               </li>
 
-              <li>Note: {element.note}</li>
-              <li>You tagged: {element.tags}</li>
+              <li>Note: {activity.note}</li>
 
-              {element.imageURL && (
+              <li>
+                <TagList
+                  activityId={activity.id}
+                  tagId={activity.tags}
+                  editTag={editTag}
+                />
+              </li>
+
+              {activity.imageURL && (
                 <Image
-                  src={element.imageURL}
+                  src={activity.imageURL}
                   alt="sample image"
                   width="300"
                   height="150"
                 />
               )}
-              <li>Date: {element.date}</li>
+              <li>Date: {activity.date}</li>
               <li>
-                {element.url && (
-                  <Link href={element.url} target="_blank">
+                {activity.url && (
+                  <Link href={activity.url} target="_blank">
                     your URL
                   </Link>
                 )}

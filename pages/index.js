@@ -1,16 +1,26 @@
 import ActivityCards from "@/components/ActivityCards";
 
 import Link from "next/link";
+import Image from "next/image";
 
-export default function HomePage({ activities }) {
+export default function HomePage({ activities, editTag }) {
   return (
     <div>
       <h1>Activities Page</h1>
-      <Link href="/forms">
-        <button>add another activity</button>
+      <Link style={{ display: "flex", justifyContent: "center" }} href="/forms">
+        <button>
+          <Image
+            src="/assets/add.png"
+            width="25"
+            height="25"
+            alt="book"
+            margin="auto"
+          />
+        </button>
       </Link>
 
-      <ActivityCards activities={activities}></ActivityCards>
+      <ActivityCards activities={activities} editTag={editTag}></ActivityCards>
     </div>
   );
 }
+//make the Link and button to a separate AddNewButton component.

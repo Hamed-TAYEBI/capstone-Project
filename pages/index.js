@@ -23,3 +23,4 @@ export default function HomePage({ activities, editTag }) {
     </div>
   );
 }
+//make the Link and button to a separate AddNewButton component.

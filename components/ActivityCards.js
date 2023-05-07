@@ -1,7 +1,7 @@
-import Image from "next/image";
+import styled from "styled-components";
 import Link from "next/link";
 import TagList from "./TagList/TagList";
-import { useRouter } from "next/router";
+import { StyledLink } from "./StyledLink";
 
 export default function ActivityCards({ activities, editTag }) {
   return (
@@ -9,13 +9,8 @@ export default function ActivityCards({ activities, editTag }) {
       {activities.map((activity) => {
         return (
           <div className="container" key={activity.id}>
-            <ul style={{ listStyleType: "none" }}>
-              <li
-                style={{
-                  fontWeight: "bold",
-                  color: "green",
-                }}
-              >
+            <ul>
+              <li>
                 Title:
                 {activity.title}
               </li>
@@ -30,27 +25,21 @@ export default function ActivityCards({ activities, editTag }) {
                 />
               </li>
 
-              {activity.imageURL && (
-                <Image
-                  src={activity.imageURL}
-                  alt="sample image"
-                  width="300"
-                  height="150"
-                />
-              )}
+              {activity.imageURL && <TagImg src={activity.imageURL} />}
               <li>Date: {activity.date}</li>
+
               <li>
                 {activity.url && (
-                  <Link href={activity.url} target="_blank">
-                    your URL
+                  <Link id="link_Styles" href={activity.url} target="_blank">
+                    Your URL
                   </Link>
                 )}
               </li>
+
               <li>
-                {" "}
-                <button>
-                  <Link href={`/activity/${activity.id}`}>Read More</Link>
-                </button>{" "}
+                <Link id="link_Styles" href={`/activity/${activity.id}`}>
+                  Read More
+                </Link>
               </li>
             </ul>
           </div>
@@ -59,3 +48,11 @@ export default function ActivityCards({ activities, editTag }) {
     </>
   );
 }
+
+const TagImg = styled.img.attrs(({ src }) => ({
+  src: src,
+  alt: "sample image",
+}))`
+  width: 300px;
+  height: 150px;
+`;

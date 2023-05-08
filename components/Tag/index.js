@@ -15,7 +15,7 @@ export default function Tag({ tag, foundTag, editTag, activityId, tagId }) {
         src={tag.src}
         width="25"
         height="25"
-        alt="morning-clock"
+        alt={tag.title}
         style={{ margin: "3px", opacity }}
       />
     </button>

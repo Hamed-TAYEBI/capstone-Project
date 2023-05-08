@@ -84,21 +84,7 @@ input {
 .form__submit-button:hover {
   background-color: #B4CCB9;
 }
-#link_Styles {
-    
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #B4CCB9;
-    color:  #F76D57;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    border: solid beige;
-  
 
-  
-}
 
   
 `;

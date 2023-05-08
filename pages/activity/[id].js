@@ -4,7 +4,11 @@ import Link from "next/link";
 import { data } from "@/lib/db/db";
 import { useRouter } from "next/router";
 
-export default function SingleActivity({ editTag }) {
+export default function SingleActivity({
+  editTag,
+  removeActivity,
+  editActivity,
+}) {
   const router = useRouter();
   const id = router.query.id;
   const activity = data.find((activity) => activity.id == id);
@@ -38,6 +42,7 @@ export default function SingleActivity({ editTag }) {
             </Link>
           )}
         </li>
+        <button onClick={() => removeActivity(id)}> Delete </button>
       </ul>
     </>
   );

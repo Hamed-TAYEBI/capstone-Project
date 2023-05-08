@@ -2,10 +2,10 @@ import styled from "styled-components";
 import Link from "next/link";
 export const StyledLink = styled(Link)`
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #b4ccb9;
+  color: #f76d57;
   text-decoration: none;
   font-weight: bold;
   text-align: center;

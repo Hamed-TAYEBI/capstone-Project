@@ -85,6 +85,4 @@ input {
   background-color: #B4CCB9;
 }
 
-
-  
 `;

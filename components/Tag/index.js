@@ -5,7 +5,6 @@ export default function Tag({ tag, foundTag, editTag, activityId, tagId }) {
   const [opacity, setOpacity] = useState(foundTag ? 1 : 0.5);
 
   function handleClick(event) {
-    // console.log("to do cll function from app.js");
     editTag(activityId, tagId);
     setOpacity(opacity === 1 ? 0.5 : 1);
   }
@@ -16,10 +15,9 @@ export default function Tag({ tag, foundTag, editTag, activityId, tagId }) {
         src={tag.src}
         width="25"
         height="25"
-        alt="morning-clock"
+        alt={tag.title}
         style={{ margin: "3px", opacity }}
       />
     </button>
   );
 }
-// UserStory 5 is updating.

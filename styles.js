@@ -27,17 +27,20 @@ export default createGlobalStyle`
 li {
   border-bottom: 1px solid black;
   margin-bottom: 5px;
+  font-weight: bold;
+  color: #506C7F
   
 }
 a {
   
   text-decoration: none;
-  color: navy;
+
 }
 input {
   display: block;
   margin: auto;
 }
+
   .container {
   display: flex;
   text-align: center;
@@ -72,19 +75,16 @@ input {
   border: none;
   padding-inline: 20px;
   padding-block: 10px;
-  background-color: red;
-  color: yellow;
-  font-size: 0.5rem;
+  background-color: #F9EBB2;
+  color: #F76D57;
+  font-size: 0.75rem;
+  
 }
 
 .form__submit-button:hover {
-  background-color: blue;
+  background-color: #B4CCB9;
 }
 
-.tag {
- }
+
   
-
-
-
 `;

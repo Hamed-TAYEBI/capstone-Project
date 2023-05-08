@@ -1,6 +1,7 @@
-import Image from "next/image";
+import styled from "styled-components";
 import Link from "next/link";
 import TagList from "./TagList/TagList";
+import { StyledLink } from "./StyledLink";
 
 export default function ActivityCards({ activities, editTag }) {
   return (
@@ -8,13 +9,8 @@ export default function ActivityCards({ activities, editTag }) {
       {activities.map((activity) => {
         return (
           <div className="container" key={activity.id}>
-            <ul style={{ listStyleType: "none" }}>
-              <li
-                style={{
-                  fontWeight: "bold",
-                  color: "green",
-                }}
-              >
+            <ul>
+              <li>
                 Title:
                 {activity.title}
               </li>
@@ -29,21 +25,21 @@ export default function ActivityCards({ activities, editTag }) {
                 />
               </li>
 
-              {activity.imageURL && (
-                <Image
-                  src={activity.imageURL}
-                  alt="sample image"
-                  width="300"
-                  height="150"
-                />
-              )}
+              {activity.imageURL && <TagImg src={activity.imageURL} />}
               <li>Date: {activity.date}</li>
+
               <li>
                 {activity.url && (
-                  <Link href={activity.url} target="_blank">
-                    your URL
-                  </Link>
+                  <StyledLink href={activity.url} target="_blank">
+                    Your URL
+                  </StyledLink>
                 )}
+              </li>
+
+              <li>
+                <StyledLink href={`/activity/${activity.id}`}>
+                  Read More
+                </StyledLink>
               </li>
             </ul>
           </div>
@@ -52,3 +48,11 @@ export default function ActivityCards({ activities, editTag }) {
     </>
   );
 }
+
+const TagImg = styled.img.attrs(({ src }) => ({
+  src: src,
+  alt: "sample image",
+}))`
+  width: 300px;
+  height: 150px;
+`;

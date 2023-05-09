@@ -8,7 +8,6 @@ export default function Tag({ tag, foundTag, editTag, activityId, tagId }) {
     editTag(activityId, tagId);
     setOpacity(opacity === 1 ? 0.5 : 1);
   }
-
   return (
     <button onClick={handleClick} key={tag.id}>
       <Image

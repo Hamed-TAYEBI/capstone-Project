@@ -7,7 +7,10 @@ export default function HomePage({ activities, editTag }) {
   return (
     <div>
       <h1>Activities Page</h1>
-      <Link style={{ display: "flex", justifyContent: "center" }} href="/forms">
+      <Link
+        style={{ display: "flex", justifyContent: "center" }}
+        href="/create"
+      >
         <button>
           <Image
             src="/assets/add.png"

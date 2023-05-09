@@ -12,8 +12,17 @@ export default function App({ Component, pageProps }) {
 
   function removeActivity(id) {
     setActivities(activities.filter((activity) => activity.id !== Number(id)));
-    console.log("delete this data and id num ", data, typeof id);
     router.push("/");
+  }
+  function editActivity(id, data) {
+    const updatedActivities = activities.map((activity) => {
+      if (activity.id == Number(id)) {
+        return { ...activity, ...data };
+      } else return activity;
+    });
+
+    setActivities(updatedActivities);
+    router.push(`/`);
   }
 
   function editTag(activityId, tagId) {}
@@ -26,6 +35,7 @@ export default function App({ Component, pageProps }) {
         addActivity={addActivity}
         activities={activities}
         removeActivity={removeActivity}
+        editActivity={editActivity}
       />
     </>
   );

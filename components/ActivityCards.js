@@ -18,6 +18,7 @@ export default function ActivityCards({ activities, editTag }) {
 
               <li>
                 <TagList
+                  tags={activity.tags}
                   activityId={activity.id}
                   tagId={activity.tags}
                   editTag={editTag}
@@ -30,15 +31,13 @@ export default function ActivityCards({ activities, editTag }) {
               <li>
                 {activity.url && (
                   <StyledLink href={activity.url} target="_blank">
-                    Your URL
+                    url
                   </StyledLink>
                 )}
               </li>
 
               <li>
-                <StyledLink href={`/activity/${activity.id}`}>
-                  Read More
-                </StyledLink>
+                <StyledLink href={`/activity/${activity.id}`}>read</StyledLink>
               </li>
             </ul>
           </div>

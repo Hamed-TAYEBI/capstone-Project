@@ -3,15 +3,13 @@ import styled from "styled-components";
 import Link from "next/link";
 import { data } from "@/lib/db/db";
 import { useRouter } from "next/router";
+import { StyledLink } from "@/components/StyledLink";
 
-export default function SingleActivity({
-  editTag,
-  removeActivity,
-  editActivity,
-}) {
+export default function SingleActivity({ editTag, removeActivity }) {
   const router = useRouter();
   const id = router.query.id;
   const activity = data.find((activity) => activity.id == id);
+
   if (!activity) {
     return <div>not found.....</div>;
   }
@@ -42,7 +40,8 @@ export default function SingleActivity({
             </Link>
           )}
         </li>
-        <button onClick={() => removeActivity(id)}> Delete </button>
+        <button onClick={() => removeActivity(id)}> !! Delete !! </button>
+        <StyledLink href={`/activity/edit/${id}`}>edit</StyledLink>
       </ul>
     </>
   );

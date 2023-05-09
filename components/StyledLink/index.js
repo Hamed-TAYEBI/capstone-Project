@@ -7,11 +7,11 @@ export const StyledLink = styled(Link)`
   background-color: #b4ccb9;
   color: #f76d57;
   text-decoration: none;
-  font-weight: bold;
   text-align: center;
   border: none;
-  height: 35px;
-  width: 120px;
+  height: 25px;
+  width: 100px;
+  margin: 10px;
 
   &:hover {
     background-color: #0056b3;

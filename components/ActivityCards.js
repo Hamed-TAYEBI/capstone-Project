@@ -26,7 +26,7 @@ export default function ActivityCards({ activities, editTag }) {
               </li>
 
               {activity.imageURL && <TagImg src={activity.imageURL} />}
-              <li>Date: {activity.date}</li>
+              <li>{activity.date}</li>
 
               <li>
                 {activity.url && (

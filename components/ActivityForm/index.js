@@ -10,7 +10,7 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <label htmlFor="title">My title: </label>
+      <label htmlFor="title"></label>
       <input
         required
         id="title"
@@ -20,9 +20,10 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
         placeholder="...my title for this activity"
         style={{ width: "300px", height: "75px" }}
       />
-      <label htmlFor="note">My note: </label>
+      <label htmlFor="note"></label>
       <input
         id="note"
+        className="text-input"
         type="text"
         name="note"
         defaultValue={activity.note}
@@ -30,7 +31,7 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
         style={{ width: "300px", height: "200px" }}
       />
 
-      <label htmlFor="url">URL: </label>
+      <label htmlFor="url"></label>
       <input
         id="url"
         type="url"
@@ -38,16 +39,18 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
         defaultValue={activity.url}
         placeholder="...add a URL"
       />
-      <label htmlFor="imageURL">image URL </label>
+      <label htmlFor="imageURL"></label>
       <input
+        className="image"
         id="imageURL"
         type="url"
         name="imageURL"
-        placeholder="..url"
+        placeholder="image url"
         defaultValue={activity.imageURL}
       />
-      <label htmlFor="date">Date: </label>
+      <label htmlFor="date"></label>
       <input id="date" type="date" name="date" defaultValue={activity.date} />
+
       <button
         type="submit"
         className="form__submit-button"

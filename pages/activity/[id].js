@@ -15,7 +15,7 @@ export default function SingleActivity({ editTag, removeActivity }) {
   }
   return (
     <>
-      <ul>
+      <ul className="form">
         <li>
           Title:
           {activity.title}
@@ -25,14 +25,15 @@ export default function SingleActivity({ editTag, removeActivity }) {
 
         <li>
           <TagList
+            tags={activity.tags}
             activityId={activity.id}
             tagId={activity.tags}
             editTag={editTag}
           />
         </li>
 
-        {activity.imageURL && <TagImg src={activity.imageURL} />}
-        <li>Date: {activity.date}</li>
+        {activity.imageURL && <Img src={activity.imageURL} />}
+        <li>{activity.date}</li>
         <li>
           {activity.url && (
             <Link href={activity.url} target="_blank">
@@ -40,14 +41,18 @@ export default function SingleActivity({ editTag, removeActivity }) {
             </Link>
           )}
         </li>
-        <button onClick={() => removeActivity(id)}> !! Delete !! </button>
-        <StyledLink href={`/activity/edit/${id}`}>edit</StyledLink>
+        <div className="buttonlink">
+          <button className="delete-button" onClick={() => removeActivity(id)}>
+            !! Delete !!
+          </button>
+          <StyledLink href={`/activity/edit/${id}`}>edit</StyledLink>
+        </div>
       </ul>
     </>
   );
 }
 
-const TagImg = styled.img.attrs(({ src }) => ({
+const Img = styled.img.attrs(({ src }) => ({
   src: src,
   alt: "sample image",
 }))`

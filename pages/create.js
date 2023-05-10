@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import ActivityForm from "@/components/ActivityForm";
-
+import StyledReturn from "@/components/StyledReturn/StyledReturn";
 export default function Form({ addActivity }) {
   const router = useRouter();
 
@@ -11,7 +11,8 @@ export default function Form({ addActivity }) {
 
   return (
     <>
-      <h1 id="favourite-activity">Add activity</h1>
+      <StyledReturn />
+      <h1>Add activity</h1>
       <ActivityForm onSubmit={handleSubmit}></ActivityForm>
     </>
   );

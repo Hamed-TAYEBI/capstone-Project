@@ -1,6 +1,7 @@
 import ActivityForm from "@/components/ActivityForm";
 import { data } from "@/lib/db/db";
 import { useRouter } from "next/router";
+import StyledReturn from "@/components/StyledReturn/StyledReturn";
 
 export default function EditActivity({ editActivity }) {
   const router = useRouter();
@@ -11,11 +12,13 @@ export default function EditActivity({ editActivity }) {
   }
 
   if (!activity) {
-    return <div>not found.....</div>;
+    return <p>not found.....</p>;
   }
   return (
     <>
+      <StyledReturn />
       <h1>EDIT ACTIVITY</h1>
+
       <ActivityForm onSubmit={handleSubmit} activity={activity}></ActivityForm>
     </>
   );

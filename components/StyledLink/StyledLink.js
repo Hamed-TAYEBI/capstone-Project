@@ -8,11 +8,12 @@ export const StyledLink = styled(Link)`
   background-color: #b4ccb9;
   color: #f76d57;
   text-align: center;
+  line-height: 1.4;
+  margin: auto;
+
   border: solid #45aab8;
   height: 30px;
   width: 100px;
-  line-height: 1.4;
-  margin: auto;
 
   &:hover {
     background-color: #0056b3;

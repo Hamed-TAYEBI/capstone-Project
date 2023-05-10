@@ -7,7 +7,6 @@ export default function Tag({ tag, foundTag, editTag, activityId, tagId }) {
   function handleClick(event) {
     editTag(activityId, tagId);
     setOpacity(opacity === 1 ? 0.5 : 1);
-    console.log("edittag and activityid", activityId, tagId);
   }
   return (
     <button onClick={handleClick} key={tag.id}>

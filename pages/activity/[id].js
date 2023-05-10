@@ -3,7 +3,10 @@ import styled from "styled-components";
 import Link from "next/link";
 import { data } from "@/lib/db/db";
 import { useRouter } from "next/router";
-import { StyledLink } from "@/components/StyledLink";
+import { StyledLink } from "@/components/StyledLink/StyledLink";
+import StyledReturn from "@/components/StyledReturn/StyledReturn";
+import { StyledContainer } from "@/components/StyledContainer/StyledContainer";
+import { StyledDeleteButton } from "@/components/StyledDeleteButton/StyledDeleteButton";
 
 export default function SingleActivity({ editTag, removeActivity }) {
   const router = useRouter();
@@ -11,43 +14,45 @@ export default function SingleActivity({ editTag, removeActivity }) {
   const activity = data.find((activity) => activity.id == id);
 
   if (!activity) {
-    return <div>not found.....</div>;
+    return <p>not found.....</p>;
   }
   return (
     <>
-      <ul className="form">
-        <li>
-          Title:
-          {activity.title}
-        </li>
+      <StyledReturn />
+      <StyledContainer>
+        <ul>
+          <li>
+            Title:
+            {activity.title}
+          </li>
 
-        <li>Note: {activity.note}</li>
+          <li>Note: {activity.note}</li>
 
-        <li>
-          <TagList
-            tags={activity.tags}
-            activityId={activity.id}
-            tagId={activity.tags}
-            editTag={editTag}
-          />
-        </li>
+          <li>
+            <TagList
+              tags={activity.tags}
+              activityId={activity.id}
+              tagId={activity.tags}
+              editTag={editTag}
+            />
+          </li>
 
-        {activity.imageURL && <Img src={activity.imageURL} />}
-        <li>{activity.date}</li>
-        <li>
-          {activity.url && (
-            <Link href={activity.url} target="_blank">
-              your URL
-            </Link>
-          )}
-        </li>
-        <div className="buttonlink">
-          <button className="delete-button" onClick={() => removeActivity(id)}>
+          {activity.imageURL && <Img src={activity.imageURL} />}
+          <li>{activity.date}</li>
+          <li>
+            {activity.url && (
+              <Link href={activity.url} target="_blank">
+                click for link
+              </Link>
+            )}
+          </li>
+
+          <StyledDeleteButton onClick={() => removeActivity(id)}>
             !! Delete !!
-          </button>
+          </StyledDeleteButton>
           <StyledLink href={`/activity/edit/${id}`}>edit</StyledLink>
-        </div>
-      </ul>
+        </ul>
+      </StyledContainer>
     </>
   );
 }

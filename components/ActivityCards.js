@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import TagList from "./TagList/TagList";
-import { StyledLink } from "./StyledLink";
-
+import { StyledLink } from "./StyledLink/StyledLink";
+import { StyledContainer } from "./StyledContainer/StyledContainer";
 export default function ActivityCards({ activities, editTag }) {
   return (
     <>
       {activities.map((activity) => {
         return (
-          <div className="container" key={activity.id}>
-            <ul>
+          <StyledContainer>
+            <ul key={activity.id}>
               <li>
                 Title:
                 {activity.title}
@@ -25,13 +25,13 @@ export default function ActivityCards({ activities, editTag }) {
                 />
               </li>
 
-              {activity.imageURL && <TagImg src={activity.imageURL} />}
+              {activity.imageURL && <TagImage src={activity.imageURL} />}
               <li>{activity.date}</li>
 
               <li>
                 {activity.url && (
                   <StyledLink href={activity.url} target="_blank">
-                    url
+                    related url
                   </StyledLink>
                 )}
               </li>
@@ -40,14 +40,14 @@ export default function ActivityCards({ activities, editTag }) {
                 <StyledLink href={`/activity/${activity.id}`}>read</StyledLink>
               </li>
             </ul>
-          </div>
+          </StyledContainer>
         );
       })}
     </>
   );
 }
 
-const TagImg = styled.img.attrs(({ src }) => ({
+const TagImage = styled.img.attrs(({ src }) => ({
   src: src,
   alt: "sample image",
 }))`

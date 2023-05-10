@@ -18,41 +18,42 @@ export default function SingleActivity({ editTag, removeActivity }) {
   }
   return (
     <>
-      <StyledReturn />
-      <StyledContainer>
-        <ul key={activity.id}>
-          <li>
-            Title:
-            {activity.title}
-          </li>
+      <StyledReturn key={activity.id}>
+        <StyledContainer>
+          <ul>
+            <li>
+              Title:
+              {activity.title}
+            </li>
 
-          <li>Note: {activity.note}</li>
+            <li>Note: {activity.note}</li>
 
-          <li>
-            <TagList
-              tags={activity.tags}
-              activityId={activity.id}
-              tagId={activity.tags}
-              editTag={editTag}
-            />
-          </li>
+            <li>
+              <TagList
+                tags={activity.tags}
+                activityId={activity.id}
+                tagId={activity.tags}
+                editTag={editTag}
+              />
+            </li>
 
-          {activity.imageURL && <Img src={activity.imageURL} />}
-          <li>{activity.date}</li>
-          <li>
-            {activity.url && (
-              <Link href={activity.url} target="_blank">
-                click for link
-              </Link>
-            )}
-          </li>
+            {activity.imageURL && <Img src={activity.imageURL} />}
+            <li>{activity.date}</li>
+            <li>
+              {activity.url && (
+                <Link href={activity.url} target="_blank">
+                  click for link
+                </Link>
+              )}
+            </li>
 
-          <StyledDeleteButton onClick={() => removeActivity(id)}>
-            !! Delete !!
-          </StyledDeleteButton>
-          <StyledLink href={`/activity/edit/${id}`}>edit</StyledLink>
-        </ul>
-      </StyledContainer>
+            <StyledDeleteButton onClick={() => removeActivity(id)}>
+              !! Delete !!
+            </StyledDeleteButton>
+            <StyledLink href={`/activity/edit/${id}`}>edit</StyledLink>
+          </ul>
+        </StyledContainer>
+      </StyledReturn>
     </>
   );
 }

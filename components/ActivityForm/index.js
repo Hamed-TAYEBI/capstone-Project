@@ -36,7 +36,7 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
           placeholder="...your note"
         ></StyledNoteInput>
 
-        <label htmlFor="url">activity's web url</label>
+        <label htmlFor="url">web url of </label>
         <input
           id="url"
           type="url"
@@ -44,7 +44,7 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
           defaultValue={activity.url}
           placeholder="...add a URL"
         />
-        <label htmlFor="imageURL">image's url</label>
+        <label htmlFor="imageURL">url of image</label>
         <input
           className="image"
           id="imageURL"

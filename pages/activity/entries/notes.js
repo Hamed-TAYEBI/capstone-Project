@@ -1,7 +1,8 @@
 import { StyledContainer } from "@/components/StyledContainer/StyledContainer";
 import StyledReturn from "@/components/StyledReturn/StyledReturn";
+import Link from "next/link";
 
-export default function TitleCards({ activities }) {
+export default function NotesCards({ activities }) {
   return (
     <>
       <StyledReturn />
@@ -9,9 +10,11 @@ export default function TitleCards({ activities }) {
       {activities.map((activity) => {
         return (
           <>
-            <StyledContainer>
-              <p>{activity.title}</p>
-            </StyledContainer>
+            <Link href={`/activity/${activity.id}`}>
+              <StyledContainer>
+                <p>{activity.note}</p>
+              </StyledContainer>
+            </Link>
           </>
         );
       })}

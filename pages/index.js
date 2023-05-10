@@ -7,8 +7,16 @@ export default function HomePage({ activities, editTag }) {
     <>
       <div className="header">
         <StyledReturn />
-        <StyledHeaderLinks href="/titles">Titles</StyledHeaderLinks>
-        <StyledHeaderLinks href="/create">add</StyledHeaderLinks>
+        <StyledHeaderLinks href="/activity/entries/notes">
+          Notes
+        </StyledHeaderLinks>
+        <StyledHeaderLinks href="/activity/entries/titles">
+          Titles
+        </StyledHeaderLinks>
+        <StyledHeaderLinks href="/activity/entries/images">
+          Images
+        </StyledHeaderLinks>
+        <StyledHeaderLinks href="/create">ADD</StyledHeaderLinks>
       </div>
       <ActivityCards activities={activities} editTag={editTag}></ActivityCards>
     </>

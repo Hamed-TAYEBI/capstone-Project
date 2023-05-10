@@ -20,7 +20,7 @@ export default function SingleActivity({ editTag, removeActivity }) {
     <>
       <StyledReturn />
       <StyledContainer>
-        <ul>
+        <ul key={activity.id}>
           <li>
             Title:
             {activity.title}

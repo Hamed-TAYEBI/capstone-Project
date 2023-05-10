@@ -7,8 +7,8 @@ export default function ActivityCards({ activities, editTag }) {
     <>
       {activities.map((activity) => {
         return (
-          <StyledContainer>
-            <ul key={activity.id}>
+          <StyledContainer key={activity.id}>
+            <ul>
               <li>
                 Title:
                 {activity.title}

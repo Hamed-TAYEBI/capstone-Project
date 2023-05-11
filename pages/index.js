@@ -7,8 +7,8 @@ import { StyledHeader } from "@/components/StyledHeader/StyledHeader";
 export default function HomePage({ activities, editTag }) {
   return (
     <>
+      <StyledReturn />
       <StyledHeader>
-        <StyledReturn />
         <StyledHeaderLinks href="/create">+ Add </StyledHeaderLinks>
 
         <StyledHeaderLinks href="/activity/entries/notes">

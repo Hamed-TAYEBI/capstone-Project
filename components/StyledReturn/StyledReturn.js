@@ -6,11 +6,12 @@ export default function StyledReturn() {
     <>
       <Link href="/">
         <Image
-          src={"/return.png"}
+          src={"/price.png"}
           width="35"
           height="35"
-          alt="price bottom"
-          style={{ position: "fixed", top: "5px", right: "5px" }}
+          alt="return bottom"
+          style={{ position: "fixed", top: "150px", right: "5px" }}
+          aria-label="Return to home page"
         ></Image>
       </Link>
     </>

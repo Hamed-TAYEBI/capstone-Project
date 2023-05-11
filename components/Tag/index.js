@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { StyledTagButton } from "../StyledTagButton/StyledTagButton";
+
 export default function Tag({ tag, foundTag, editTag, activityId, tagId }) {
   const [opacity, setOpacity] = useState(foundTag ? 1 : 0.3);
 

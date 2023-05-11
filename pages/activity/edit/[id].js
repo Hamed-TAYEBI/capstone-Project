@@ -2,6 +2,8 @@ import ActivityForm from "@/components/ActivityForm";
 import { data } from "@/lib/db/db";
 import { useRouter } from "next/router";
 import StyledReturn from "@/components/StyledReturn/StyledReturn";
+import { Wrapper } from "@/components/Wrapper/Wrapper";
+import { StyledContainer } from "@/components/StyledContainer/StyledContainer";
 
 export default function EditActivity({ editActivity }) {
   const router = useRouter();
@@ -18,8 +20,14 @@ export default function EditActivity({ editActivity }) {
     <>
       <StyledReturn />
       <h1>EDIT ACTIVITY</h1>
-
-      <ActivityForm onSubmit={handleSubmit} activity={activity}></ActivityForm>
+      <Wrapper>
+        <StyledContainer>
+          <ActivityForm
+            onSubmit={handleSubmit}
+            activity={activity}
+          ></ActivityForm>
+        </StyledContainer>
+      </Wrapper>
     </>
   );
 }

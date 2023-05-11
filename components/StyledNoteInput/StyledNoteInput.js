@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const StyledNoteInput = styled.input`
-  width: 300px;
-  height: 275px;
-  margin-left: 20px;
+export const StyledNoteInput = styled.textarea`
+  width: 100%;
+  height: 4rem;
 `;

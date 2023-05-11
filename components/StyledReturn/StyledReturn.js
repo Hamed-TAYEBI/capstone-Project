@@ -6,13 +6,11 @@ export default function StyledReturn() {
     <>
       <Link href="/">
         <Image
-          position="fixed"
           src={"/return.png"}
-          width="50"
-          height="50"
-          alt="return bottom"
-          top="10"
-          left="10"
+          width="35"
+          height="35"
+          alt="price bottom"
+          style={{ position: "fixed", top: "5px", right: "5px" }}
         ></Image>
       </Link>
     </>

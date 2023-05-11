@@ -1,5 +1,6 @@
 import { StyledContainer } from "@/components/StyledContainer/StyledContainer";
 import StyledReturn from "@/components/StyledReturn/StyledReturn";
+import { Wrapper } from "@/components/Wrapper/Wrapper";
 import Link from "next/link";
 
 export default function NotesCards({ activities }) {
@@ -10,11 +11,13 @@ export default function NotesCards({ activities }) {
       {activities.map((activity) => {
         return (
           <>
-            <Link href={`/activity/${activity.id}`}>
+            <Wrapper>
               <StyledContainer>
-                <p>{activity.note}</p>
+                <Link href={`/activity/${activity.id}`}>
+                  <p>{activity.note}</p>
+                </Link>
               </StyledContainer>
-            </Link>
+            </Wrapper>
           </>
         );
       })}

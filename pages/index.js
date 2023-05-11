@@ -1,12 +1,16 @@
 import ActivityCards from "@/components/ActivityCards";
 import StyledReturn from "@/components/StyledReturn/StyledReturn";
 import { StyledHeaderLinks } from "@/components/StyledHeaderLinks/StyledHeaderLinks";
+import { Wrapper } from "@/components/Wrapper/Wrapper";
+import { StyledHeader } from "@/components/StyledHeader/StyledHeader";
 
 export default function HomePage({ activities, editTag }) {
   return (
     <>
-      <div className="header">
+      <StyledHeader>
         <StyledReturn />
+        <StyledHeaderLinks href="/create">+ Add </StyledHeaderLinks>
+
         <StyledHeaderLinks href="/activity/entries/notes">
           Notes
         </StyledHeaderLinks>
@@ -14,11 +18,15 @@ export default function HomePage({ activities, editTag }) {
           Titles
         </StyledHeaderLinks>
         <StyledHeaderLinks href="/activity/entries/images">
-          Images
+          Gallery
         </StyledHeaderLinks>
-        <StyledHeaderLinks href="/create">ADD</StyledHeaderLinks>
-      </div>
-      <ActivityCards activities={activities} editTag={editTag}></ActivityCards>
+      </StyledHeader>
+      <Wrapper>
+        <ActivityCards
+          activities={activities}
+          editTag={editTag}
+        ></ActivityCards>
+      </Wrapper>
     </>
   );
 }

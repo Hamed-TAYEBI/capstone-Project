@@ -12,6 +12,7 @@ export default function Form({ addActivity }) {
   return (
     <>
       <StyledReturn />
+
       <h1>Add activity</h1>
       <ActivityForm onSubmit={handleSubmit}></ActivityForm>
     </>

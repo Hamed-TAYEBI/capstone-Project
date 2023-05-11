@@ -2,55 +2,40 @@ import styled from "styled-components";
 import TagList from "./TagList/TagList";
 import { StyledLink } from "./StyledLink/StyledLink";
 import { StyledContainer } from "./StyledContainer/StyledContainer";
+import { StyledDate } from "./StyledDate/StyledDate";
+import { TagImage } from "./StyledTagImage/StyledTagImage";
 export default function ActivityCards({ activities, editTag }) {
   return (
     <>
       {activities.map((activity) => {
         return (
           <StyledContainer key={activity.id}>
-            <ul>
-              <li>
-                Title:
-                {activity.title}
-              </li>
+            <h3>
+              Title:
+              {activity.title}
+            </h3>
 
-              <li>Note: {activity.note}</li>
+            <p>Note: {activity.note}</p>
 
-              <li>
-                <TagList
-                  tags={activity.tags}
-                  activityId={activity.id}
-                  tagId={activity.tags}
-                  editTag={editTag}
-                />
-              </li>
+            <TagList
+              tags={activity.tags}
+              activityId={activity.id}
+              tagId={activity.tags}
+              editTag={editTag}
+            />
 
-              {activity.imageURL && <TagImage src={activity.imageURL} />}
-              <li>{activity.date}</li>
+            {activity.imageURL && <TagImage src={activity.imageURL} />}
+            <StyledDate>{activity.date}</StyledDate>
 
-              <li>
-                {activity.url && (
-                  <StyledLink href={activity.url} target="_blank">
-                    related url
-                  </StyledLink>
-                )}
-              </li>
-
-              <li>
-                <StyledLink href={`/activity/${activity.id}`}>read</StyledLink>
-              </li>
-            </ul>
+            {activity.url && (
+              <StyledLink href={activity.url} target="_blank">
+                related url
+              </StyledLink>
+            )}
+            <StyledLink href={`/activity/${activity.id}`}>read</StyledLink>
           </StyledContainer>
         );
       })}
     </>
   );
 }
-
-const TagImage = styled.img.attrs(({ src }) => ({
-  src: src,
-  alt: "sample image",
-}))`
-  width: 300px;
-  height: 150px;
-`;

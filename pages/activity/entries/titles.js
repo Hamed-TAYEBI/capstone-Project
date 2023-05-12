@@ -7,7 +7,7 @@ export default function TitleCards({ activities }) {
     <>
       <StyledReturn />
 
-      <h1> Your Titles</h1>
+      <h1>Title Cards</h1>
       {activities.map((activity) => {
         return (
           <>

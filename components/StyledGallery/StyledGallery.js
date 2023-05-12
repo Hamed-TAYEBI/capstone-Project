@@ -5,7 +5,7 @@ export const StyledGallery = styled.img.attrs(({ src }) => ({
   alt: "sample image",
 }))`
   width: 300px;
-  height: 200px;
+  height: auto;
   border-radius: 7px;
   margin-right: 10px;
   margin-bottom: 10px;

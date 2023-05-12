@@ -4,7 +4,7 @@ export const TagImage = styled.img.attrs(({ src }) => ({
   alt: "sample image",
 }))`
   width: 300px;
-  height: 200px;
+  height: auto;
   border-radius: 7px;
   object-fit: cover;
   object-position: center;

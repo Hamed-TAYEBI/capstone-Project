@@ -10,12 +10,9 @@ export default function ActivityCards({ activities, editTag }) {
       {activities.map((activity) => {
         return (
           <StyledContainer key={activity.id}>
-            <h3>
-              Title:
-              {activity.title}
-            </h3>
+            <h3>{activity.title}</h3>
 
-            <p>Note: {activity.note}</p>
+            <p> {activity.note}</p>
 
             <TagList
               tags={activity.tags}

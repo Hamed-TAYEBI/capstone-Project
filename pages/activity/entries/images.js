@@ -5,7 +5,7 @@ export default function ImageCards({ activities }) {
   return (
     <>
       <StyledReturn />
-      <h1> Your Images</h1>
+      <h1>Gallery</h1>
       {activities.map((activity) => {
         return (
           <>

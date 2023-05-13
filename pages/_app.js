@@ -11,12 +11,12 @@ export default function App({ Component, pageProps }) {
   }
 
   function removeActivity(id) {
-    setActivities(activities.filter((activity) => activity.id !== Number(id)));
+    setActivities(activities.filter((activity) => activity.id !== id));
     router.push("/");
   }
   function editActivity(id, data) {
     const updatedActivities = activities.map((activity) => {
-      if (activity.id == Number(id)) {
+      if (activity.id === id) {
         return { ...activity, ...data };
       } else return activity;
     });
@@ -25,7 +25,9 @@ export default function App({ Component, pageProps }) {
     router.push(`/`);
   }
 
-  function editTag(activityId, tagId) {}
+  function editTag(activityId, tagId) {
+    console.log("activityid and tagid", activityId, tagId);
+  }
   return (
     <>
       <GlobalStyle />

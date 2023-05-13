@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import TagList from "./TagList/TagList";
 import { StyledLink } from "./StyledLink/StyledLink";
 import { StyledContainer } from "./StyledContainer/StyledContainer";

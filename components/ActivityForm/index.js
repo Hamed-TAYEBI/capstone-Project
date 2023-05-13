@@ -29,7 +29,7 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
             name="title"
             defaultValue={activity.title}
             placeholder="...my title for this activity"
-          ></StyledTitelInput>
+          />
 
           <label htmlFor="note">
             <p>notes</p>
@@ -41,7 +41,7 @@ export default function ActivityForm({ onSubmit, activity = {} }) {
             name="note"
             defaultValue={activity.note}
             placeholder="...your note"
-          ></StyledNoteInput>
+          />
 
           <label htmlFor="url">
             <p>web url</p>{" "}

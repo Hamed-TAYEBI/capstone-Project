@@ -10,7 +10,7 @@ export default function Tag({ tag, foundTag, editTag, activityId, tagId }) {
     setOpacity(opacity === 1 ? 0.3 : 1);
   }
   return (
-    <StyledTagButton onClick={handleClick} key={tag.id}>
+    <StyledTagButton onClick={handleClick} type="button" key={tag.id}>
       <Image
         src={tag.src}
         width="25"

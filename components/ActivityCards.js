@@ -3,7 +3,7 @@ import { StyledLink } from "./StyledLink/StyledLink";
 import { StyledContainer } from "./StyledContainer/StyledContainer";
 import { StyledDate } from "./StyledDate/StyledDate";
 import { TagImage } from "./StyledTagImage/StyledTagImage";
-export default function ActivityCards({ activities, editTag }) {
+export default function ActivityCards({ activities }) {
   return (
     <>
       {activities.map((activity) => {
@@ -13,12 +13,7 @@ export default function ActivityCards({ activities, editTag }) {
 
             <p> {activity.note}</p>
 
-            <TagList
-              tags={activity.tags}
-              activityId={activity.id}
-              tagId={activity.tags}
-              editTag={editTag}
-            />
+            <TagList tags={activity.tags} />
 
             {activity.imageURL && <TagImage src={activity.imageURL} />}
             <StyledDate>{activity.date}</StyledDate>

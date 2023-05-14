@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   const [activities, setActivities] = useState(data);
+
   function addActivity(newActivity) {
     setActivities([{ ...newActivity, id: crypto.randomUUID() }, ...activities]);
   }
@@ -26,13 +27,11 @@ export default function App({ Component, pageProps }) {
     router.push(`/`);
   }
 
-  function editTag(foundTag, tagId) {}
   return (
     <>
       <GlobalStyle />
       <Component
         {...pageProps}
-        editTag={editTag}
         addActivity={addActivity}
         activities={activities}
         removeActivity={removeActivity}

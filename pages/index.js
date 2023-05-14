@@ -4,7 +4,7 @@ import { StyledHeaderLinks } from "@/components/StyledHeaderLinks/StyledHeaderLi
 import { Wrapper } from "@/components/Wrapper/Wrapper";
 import { StyledHeader } from "@/components/StyledHeader/StyledHeader";
 
-export default function HomePage({ activities, editTag }) {
+export default function HomePage({ activities }) {
   return (
     <>
       <StyledReturn />
@@ -22,10 +22,7 @@ export default function HomePage({ activities, editTag }) {
         </StyledHeaderLinks>
       </StyledHeader>
       <Wrapper>
-        <ActivityCards
-          activities={activities}
-          editTag={editTag}
-        ></ActivityCards>
+        <ActivityCards activities={activities}></ActivityCards>
       </Wrapper>
     </>
   );

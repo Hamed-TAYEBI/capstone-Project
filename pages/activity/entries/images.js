@@ -11,7 +11,9 @@ export default function ImageCards({ activities }) {
           <>
             <Link href={`/activity/${activity.id}`}>
               <p>{activity.image}</p>
-              {activity.imageURL && <StyledGallery src={activity.imageURL} />}
+              {activity.imageURL && (
+                <StyledGallery src={activity.imageURL} key={activity.id} />
+              )}
             </Link>
           </>
         );

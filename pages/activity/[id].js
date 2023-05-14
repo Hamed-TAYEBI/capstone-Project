@@ -10,7 +10,7 @@ import { Wrapper } from "@/components/Wrapper/Wrapper";
 import { StyledDate } from "@/components/StyledDate/StyledDate";
 import { TagImage } from "@/components/StyledTagImage/StyledTagImage";
 
-export default function SingleActivity({ editTag, removeActivity }) {
+export default function SingleActivity({ removeActivity }) {
   const router = useRouter();
   const id = router.query.id;
   const activity = data.find((activity) => activity.id === id);
@@ -31,12 +31,7 @@ export default function SingleActivity({ editTag, removeActivity }) {
 
           <p>Note: {activity.note}</p>
 
-          <TagList
-            tags={activity.tags}
-            activityId={activity.id}
-            tagId={activity.tags}
-            editTag={editTag}
-          />
+          <TagList tags={activity.tags} />
 
           {activity.imageURL && <TagImage src={activity.imageURL} />}
           <StyledDate>{activity.date}</StyledDate>

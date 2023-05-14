@@ -49,22 +49,4 @@ image {
 }
 
 
-
-
-.buttonlink {
-  display: flex;
-  justify-content: flex-end;
-}
-
-
-.box {
-  width: calc(33.33% - 10px);
-  margin: 0 5px;
-  list-style: none;
-  padding: 10px;
-  border: 1px solid black;
-  background-color: lightgray;
-  box-sizing: border-box;
-}
-
 `;

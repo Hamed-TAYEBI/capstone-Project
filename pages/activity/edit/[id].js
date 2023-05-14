@@ -8,7 +8,7 @@ import { StyledContainer } from "@/components/StyledContainer/StyledContainer";
 export default function EditActivity({ editActivity }) {
   const router = useRouter();
   const id = router.query.id;
-  const activity = data.find((activity) => activity.id == Number(id));
+  const activity = data.find((activity) => activity.id === id);
   function handleSubmit(data) {
     editActivity(id, data);
   }

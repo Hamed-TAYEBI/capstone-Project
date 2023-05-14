@@ -5,7 +5,7 @@ export default function TagList({ tags, editTag, activityId, tagId }) {
   return (
     <ul>
       {tagList.map((tag) => {
-        const foundTag = tags?.find((id) => tag.id === id);
+        const foundTag = tags?.find((id) => tag.id == id);
         return (
           <Tag
             key={uuid4()}

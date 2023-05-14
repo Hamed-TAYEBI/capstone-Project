@@ -13,7 +13,7 @@ import { TagImage } from "@/components/StyledTagImage/StyledTagImage";
 export default function SingleActivity({ editTag, removeActivity }) {
   const router = useRouter();
   const id = router.query.id;
-  const activity = data.find((activity) => activity.id == id);
+  const activity = data.find((activity) => activity.id === id);
 
   if (!activity) {
     return <p>not found.....</p>;

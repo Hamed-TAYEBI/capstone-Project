@@ -2,6 +2,7 @@ import GlobalStyle from "../styles";
 import { data } from "@/lib/db/db";
 import { useState } from "react";
 import { useRouter } from "next/router";
+
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
@@ -25,9 +26,7 @@ export default function App({ Component, pageProps }) {
     router.push(`/`);
   }
 
-  function editTag(activityId, tagId) {
-    console.log("activityid and tagid", activityId, tagId);
-  }
+  function editTag(foundTag, tagId) {}
   return (
     <>
       <GlobalStyle />

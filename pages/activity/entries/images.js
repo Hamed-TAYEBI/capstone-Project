@@ -4,7 +4,7 @@ import { StyledGallery } from "@/components/StyledGallery/StyledGallery";
 export default function ImageCards({ activities }) {
   return (
     <>
-      <StyledReturn />
+      <StyledReturn key={activity.id} />
       <h1>Gallery</h1>
       {activities.map((activity) => {
         return (

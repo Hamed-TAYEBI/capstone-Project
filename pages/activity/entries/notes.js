@@ -11,7 +11,7 @@ export default function NotesCards({ activities }) {
       {activities.map((activity) => {
         return (
           <Wrapper>
-            <StyledContainer>
+            <StyledContainer key={activity.id}>
               <Link href={`/activity/${activity.id}`}>
                 <p>{activity.note}</p>
               </Link>

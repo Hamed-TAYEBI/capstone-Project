@@ -8,14 +8,12 @@ export default function ImageCards({ activities }) {
       <h1>Gallery</h1>
       {activities.map((activity) => {
         return (
-          <>
-            <Link href={`/activity/${activity.id}`}>
-              <p>{activity.image}</p>
-              {activity.imageURL && (
-                <StyledGallery src={activity.imageURL} key={activity.id} />
-              )}
-            </Link>
-          </>
+          <Link href={`/activity/${activity.id}`}>
+            <p>{activity.image}</p>
+            {activity.imageURL && (
+              <StyledGallery src={activity.imageURL} key={activity.id} />
+            )}
+          </Link>
         );
       })}
     </>

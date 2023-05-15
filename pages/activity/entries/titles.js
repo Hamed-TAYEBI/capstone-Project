@@ -10,15 +10,13 @@ export default function TitleCards({ activities }) {
       <h1>Title Cards</h1>
       {activities.map((activity) => {
         return (
-          <>
-            <Wrapper>
-              <Link href={`/activity/${activity.id}`}>
-                <StyledContainer>
-                  <p>{activity.title}</p>
-                </StyledContainer>
-              </Link>
-            </Wrapper>
-          </>
+          <Wrapper>
+            <Link href={`/activity/${activity.id}`}>
+              <StyledContainer>
+                <p>{activity.title}</p>
+              </StyledContainer>
+            </Link>
+          </Wrapper>
         );
       })}
     </>

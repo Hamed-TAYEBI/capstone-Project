@@ -10,15 +10,13 @@ export default function NotesCards({ activities }) {
       <h1>Note Cards</h1>
       {activities.map((activity) => {
         return (
-          <>
-            <Wrapper>
-              <StyledContainer>
-                <Link href={`/activity/${activity.id}`}>
-                  <p>{activity.note}</p>
-                </Link>
-              </StyledContainer>
-            </Wrapper>
-          </>
+          <Wrapper>
+            <StyledContainer>
+              <Link href={`/activity/${activity.id}`}>
+                <p>{activity.note}</p>
+              </Link>
+            </StyledContainer>
+          </Wrapper>
         );
       })}
     </>

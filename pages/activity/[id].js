@@ -21,9 +21,8 @@ export default function SingleActivity({ removeActivity }) {
   return (
     <>
       <Wrapper>
-        <StyledContainer key={activity.id}>
-          <StyledReturn key={activity.id} />
-
+        <StyledContainer>
+          <StyledReturn />
           <h3>
             Title:
             {activity.title}

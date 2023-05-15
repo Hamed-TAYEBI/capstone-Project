@@ -10,8 +10,8 @@ export default function NotesCards({ activities }) {
       <h1>Note Cards</h1>
       {activities.map((activity) => {
         return (
-          <Wrapper>
-            <StyledContainer key={activity.id}>
+          <Wrapper key={activity.id}>
+            <StyledContainer>
               <Link href={`/activity/${activity.id}`}>
                 <p>{activity.note}</p>
               </Link>

@@ -5,6 +5,6 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 0;
   gap: 10px;
 `;

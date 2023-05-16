@@ -1,58 +1,32 @@
-import styled from "styled-components";
-import Link from "next/link";
 import TagList from "./TagList/TagList";
-import { StyledLink } from "./StyledLink";
-
-export default function ActivityCards({ activities, editTag }) {
+import { StyledLink } from "./StyledLink/StyledLink";
+import { StyledContainer } from "./StyledContainer/StyledContainer";
+import { StyledDate } from "./StyledDate/StyledDate";
+import { TagImage } from "./StyledTagImage/StyledTagImage";
+export default function ActivityCards({ activities }) {
   return (
     <>
       {activities.map((activity) => {
         return (
-          <div className="container" key={activity.id}>
-            <ul>
-              <li>
-                Title:
-                {activity.title}
-              </li>
+          <StyledContainer key={activity.id}>
+            <h3>{activity.title}</h3>
 
-              <li>Note: {activity.note}</li>
+            <p> {activity.note}</p>
 
-              <li>
-                <TagList
-                  activityId={activity.id}
-                  tagId={activity.tags}
-                  editTag={editTag}
-                />
-              </li>
+            <TagList tags={activity.tags} />
 
-              {activity.imageURL && <TagImg src={activity.imageURL} />}
-              <li>Date: {activity.date}</li>
+            {activity.imageURL && <TagImage src={activity.imageURL} />}
+            <StyledDate>{activity.date}</StyledDate>
 
-              <li>
-                {activity.url && (
-                  <StyledLink href={activity.url} target="_blank">
-                    Your URL
-                  </StyledLink>
-                )}
-              </li>
-
-              <li>
-                <StyledLink href={`/activity/${activity.id}`}>
-                  Read More
-                </StyledLink>
-              </li>
-            </ul>
-          </div>
+            {activity.url && (
+              <StyledLink href={activity.url} target="_blank">
+                related url
+              </StyledLink>
+            )}
+            <StyledLink href={`/activity/${activity.id}`}>read</StyledLink>
+          </StyledContainer>
         );
       })}
     </>
   );
 }
-
-const TagImg = styled.img.attrs(({ src }) => ({
-  src: src,
-  alt: "sample image",
-}))`
-  width: 300px;
-  height: 150px;
-`;

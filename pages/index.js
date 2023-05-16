@@ -1,25 +1,29 @@
 import ActivityCards from "@/components/ActivityCards";
+import StyledReturn from "@/components/StyledReturn/StyledReturn";
+import { StyledHeaderLinks } from "@/components/StyledHeaderLinks/StyledHeaderLinks";
+import { Wrapper } from "@/components/Wrapper/Wrapper";
+import { StyledHeader } from "@/components/StyledHeader/StyledHeader";
 
-import Link from "next/link";
-import Image from "next/image";
-
-export default function HomePage({ activities, editTag }) {
+export default function HomePage({ activities }) {
   return (
-    <div>
-      <h1>Activities Page</h1>
-      <Link style={{ display: "flex", justifyContent: "center" }} href="/forms">
-        <button>
-          <Image
-            src="/assets/add.png"
-            width="25"
-            height="25"
-            alt="book"
-            margin="auto"
-          />
-        </button>
-      </Link>
+    <>
+      <StyledReturn />
+      <StyledHeader>
+        <StyledHeaderLinks href="/create">+ Add </StyledHeaderLinks>
 
-      <ActivityCards activities={activities} editTag={editTag}></ActivityCards>
-    </div>
+        <StyledHeaderLinks href="/activity/entries/notes">
+          Notes
+        </StyledHeaderLinks>
+        <StyledHeaderLinks href="/activity/entries/titles">
+          Titles
+        </StyledHeaderLinks>
+        <StyledHeaderLinks href="/activity/entries/images">
+          Gallery
+        </StyledHeaderLinks>
+      </StyledHeader>
+      <Wrapper>
+        <ActivityCards activities={activities}></ActivityCards>
+      </Wrapper>
+    </>
   );
 }

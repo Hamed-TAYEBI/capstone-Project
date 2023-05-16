@@ -10,7 +10,7 @@ export default createGlobalStyle`
   }
 
   html, body {
-    margin: 0;
+    
     font-family: sans-serif;
     background-color: #f3eedd;
     height: 100%;
@@ -23,11 +23,11 @@ export default createGlobalStyle`
   h1 {
     text-align: center;
     color: #506c7f;
-    font-size: 0.5rem
+    font-size: 1rem
   }
   
   h2 {text-align: center;
-    font-size: 0.5rem
+    font-size: 1rem
 
   }
 
@@ -51,10 +51,10 @@ a {
   text-decoration: none;
 
 }
-image {
+img {
   max-width: 100%;
   height: auto;
-  margin: auto;
+ 
 }
 
 

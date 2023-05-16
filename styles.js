@@ -9,17 +9,17 @@ export default createGlobalStyle`
     padding: 0;
   }
 
-  body {
+  html, body {
     margin: 0;
     font-family: sans-serif;
     background-color: #f3eedd;
-    height: 100%
+    height: 100%;
+    max-width: 400px;
+    margin: 0 auto
   }
  
 
-  html {
-    height: 100%
-  }
+  
   h1 {
     text-align: center;
     color: #506c7f;
@@ -54,7 +54,7 @@ a {
 image {
   max-width: 100%;
   height: auto;
-  margin: 0 300px;
+  margin: auto;
 }
 
 

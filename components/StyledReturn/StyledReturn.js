@@ -9,7 +9,7 @@ export default function StyledReturn() {
         width="35"
         height="35"
         alt="return bottom"
-        style={{ position: "fixed", top: "150px", right: "5px" }}
+        style={{ position: "fixed", top: "150px" }}
         aria-label="Return to home page"
       />
     </Link>
